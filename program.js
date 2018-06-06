@@ -16,9 +16,15 @@ function count() {
 	else if (num == 80) {
 		document.getElementById("encouragement").innerHTML = randomPlats();
 	}
-else if (num > 90) {
+else if (num == 90) {
 document.getElementById("encouragement").innerHTML = randomPlats();
 }
+else if (num == 100) {
+document.getElementById("encouragement").innerHTML = "Wow, over 100, look at you! Think you can hit 1000?";
+}
+else if (num == 200) {
+document.getElementById("encouragement").innerHTML = randomPlats(); }
+
 
 
 // if statement needed for different levels to 'unlock' purchases
@@ -43,7 +49,10 @@ function randomPlats() {
 	var e = "Clicks to the moon";
 	var f = "Clicks for days man";
 	var g = "Look at all those numbers!";
-	var randint = Math.floor(Math.random() * 7);
+	var h = "No life eh?";
+	var i = "just clicking all day";
+	var j = "Must be a fun life if this is all you have to do";
+	var randint = Math.floor(Math.random() * 10);
 
 	if (randint == 0) {
 	return c;}
@@ -59,4 +68,10 @@ function randomPlats() {
 	return f;}
 	else if (randint == 6) {
 	return g;}
+	else if (randint == 7) {
+	return h; }
+	else if (randint == 8) {
+	return i; }
+	else if (randint == 9) {
+	return j; }
 }
