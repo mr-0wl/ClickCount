@@ -33,11 +33,18 @@ document.getElementById("encouragement").innerHTML = randomPlats(); }
 num++;
 
 document.getElementById("counters").innerHTML = num;
+
+
 }
 
 function purchaseAssistant() {
-	num - 1000;
-	//unlock the button
+	if (num >= 1000) {
+	num -= 1000;
+	document.getElementById("doubler").disabled = false;
+	document.getElementById("counters").innerHTML = num;
+	//unlock the button 
+	}
+	
 }
 
 
@@ -74,4 +81,11 @@ function randomPlats() {
 	return i; }
 	else if (randint == 9) {
 	return j; }
+}
+function countdouble() {
+	
+	num+= 2;
+
+document.getElementById("counters").innerHTML = num;
+	
 }
