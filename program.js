@@ -89,3 +89,22 @@ function countdouble() {
 document.getElementById("counters").innerHTML = num;
 	
 }
+
+function savestate() {
+	var savedFile = JSON.stringify(num);
+	blob = new Blob([savedFile], { type: 'text/plain' }),
+    anchor = document.createElement('a');
+
+anchor.download = "Clicksave.txt";
+anchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
+anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
+anchor.click();
+}
+
+function load() {
+	var savegame = target.savefile;
+	var fileread = new FileReader();
+	
+	document.getElementById("counters").innerHTML = fileread.readAsText();
+	
+}
